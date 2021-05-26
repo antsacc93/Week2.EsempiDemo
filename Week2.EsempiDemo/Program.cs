@@ -7,6 +7,16 @@ namespace Week2.EsempiDemo
     {
         static void Main(string[] args)
         {
+            Esercizi.EccezioneLanciata();
+
+
+            while (!Esercizi.EsempioException())
+            {
+                Console.WriteLine("Ritenta");
+            }
+            
+            Console.ReadKey();
+
             #region Iterazione VS Ricorsione
             //Esercizi.FibonacciIterativo(5);
             //Esercizi.FibonacciRicorsivo(5);
@@ -35,6 +45,8 @@ namespace Week2.EsempiDemo
             watch2.Stop();
             Console.WriteLine("Il metodo ricorsivo ha impiegato {0}", watch2.ElapsedMilliseconds);
             #endregion
+
+            #region CLASSI E OGGETTI
 
             Persona persona = new Persona();
             persona.Nome = "Antonia";
@@ -70,6 +82,31 @@ namespace Week2.EsempiDemo
             Console.WriteLine(persona2.ToString());
             Console.WriteLine(persona3.ToString());
             Console.WriteLine(persona4.ToString());
+
+            #endregion
+
+            #region EREDITARIETA
+            //Esercizi.EsempioClone();
+            //Esercizi.EsempioEreditarieta();
+
+            Veicolo v = new Veicolo() { NumeroRuote = 4, Targa = "pp456pp", Telaio = 123 };
+            Automobile auto = new Automobile()
+            {
+                NumeroRuote = 4,
+                Targa = "ee234pp",
+                Interni = "tessuto",
+                Telaio = 222
+            };
+            Moto moto = new Moto()
+            {
+                Cilindrata = 250,
+                Telaio = 5678,
+                NumeroRuote = 2,
+                Targa = "ty456ll"
+            };
+            Console.WriteLine($"Veicolo Generico: {v} - Automobile {auto} - Moto: {moto}");
+
+            #endregion
 
         }
     }

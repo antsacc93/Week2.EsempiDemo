@@ -55,8 +55,12 @@ namespace Week2.EsempiDemo
         }
 
         //Metodi
-        private double CalcolaStipendio()
+        internal virtual double CalcolaStipendio()
         {
+            if (Cognome.StartsWith("1"))
+            {
+                throw new ArgumentException("Cognome non valido");
+            }
             if(Eta >= 20 && Eta <= 25 || Cognome.StartsWith("S"))
             {
                 _stipendio = _stipendio + (Stipendio * 10) / 100;
@@ -68,7 +72,12 @@ namespace Week2.EsempiDemo
             return _stipendio;
         }
 
-        public string ToString()
+        public virtual int GetNumber()
+        {
+            return 7;
+        }
+
+        public override string ToString()
         {
             //return "Nome: " + Nome + " Cognome: " + Cognome 
             return $"Nome: {Nome} Cognome: {Cognome} Età: {Eta} Data di Nascita: {DataNascita.ToShortDateString()}";

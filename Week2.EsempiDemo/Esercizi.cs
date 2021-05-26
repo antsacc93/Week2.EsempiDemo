@@ -51,5 +51,112 @@ namespace Week2.EsempiDemo
 
         #endregion
 
+        #region EREDITARIETA'
+
+        public static void EsempioClone()
+        {
+            Persona p = new Persona()
+            {
+                Nome = "Mario",
+                Cognome = "Rossi",
+                Eta = 18
+            };
+            Persona p2 = p;
+
+            Console.WriteLine("Contenuto di p: {0}", p.ToString());
+            Console.WriteLine("Contenuto di p2: {0}", p2.ToString());
+
+            p.Cognome = "Rossini";
+
+            Console.WriteLine("Contenuto di p: {0}", p.ToString());
+            Console.WriteLine("Contenuto di p2: {0}", p2.ToString());
+
+        }
+
+        public static void EsempioEreditarieta()
+        {
+            Studente s = new Studente() {
+                Nome = "Mario",
+                Cognome = "Rossi",
+                Eta = 28,
+                Matricola = "00100"
+            };
+            Console.WriteLine("Stipendio -> {0}", s.CalcolaStipendio());
+
+            Persona p = new Persona()
+            {
+                Nome = "Luigi",
+                Cognome = "Verdi",
+                Eta = 29
+            };
+            Console.WriteLine(p);
+            Console.WriteLine(s);
+
+            Impiegato i = new Impiegato()
+            {
+                Nome = "Giulia",
+                Cognome = "Bianchi",
+                Eta = 30,
+                Mansione = "Junior"
+            };
+            Console.WriteLine(i);
+        }
+
+        #endregion
+
+        #region EXCEPTION
+
+        public static bool EsempioException()
+        {
+
+            int a = 0;
+            bool esito = true;
+            try
+            {
+                a = Convert.ToInt16(Console.ReadLine());
+                esito = true;
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Inserisci un numero e non una stringa");
+                esito = false;
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine("Inserisci un numero più piccolo");
+                esito = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Errore");
+                esito = false;   
+            }
+            finally
+            {
+                a = 0;
+            }
+            return esito;
+        }
+
+        public static void EccezioneLanciata()
+        {
+            Persona p = new Persona()
+            {
+                Nome = "Mario",
+                Cognome = "1Rossi",
+                Eta = 25
+            };
+            try
+            {
+                p.CalcolaStipendio();
+            }catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+        }
+
+        #endregion
+
     }
 }
