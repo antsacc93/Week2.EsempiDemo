@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 
 namespace Week2.EsempiDemo
@@ -7,6 +8,29 @@ namespace Week2.EsempiDemo
     {
         static void Main(string[] args)
         {
+
+            #region GESTIONE RISORSE
+            ArrayList persone = GestioneIO.CaricaPersoneDaFile();
+            GestioneIO.StampaPersoneSuFile(persone);
+            //Console.WriteLine("Inserisci il nome della cartella che vuoi creare");
+            //string directoryName = Console.ReadLine();
+            //GestioneIO.CreazioneDirectory(directoryName);
+            //GestioneIO.EliminaCartella(directoryName);
+            //GestioneIO.SpostaCartella();
+            //GestioneIO.StampaContenutoCartella();
+            //Persona pers = new Persona()
+            //{
+            //    Nome = "Mario",
+            //    Cognome = "Rossi",
+            //    Eta = 23
+            //};
+            //GestioneIO.ScritturaFile(pers);
+            //GestioneIO.LeggiDaFile();
+            Console.ReadLine();
+            #endregion
+
+
+            #region EXCEPTION
             Esercizi.EccezioneLanciata();
 
 
@@ -16,6 +40,8 @@ namespace Week2.EsempiDemo
             }
             
             Console.ReadKey();
+            #endregion
+
 
             #region Iterazione VS Ricorsione
             //Esercizi.FibonacciIterativo(5);

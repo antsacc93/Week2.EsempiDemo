@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week2.EsempiDemo
 {
-    class Persona
+    public class Persona
     {
         //Campi
         //Proprietà
